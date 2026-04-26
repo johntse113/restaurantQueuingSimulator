@@ -1,0 +1,174 @@
+package com.restaurant.util;
+
+import com.restaurant.model.CustomerGroup;
+import com.restaurant.model.CustomerScenario;
+import com.restaurant.model.RestaurantSetting;
+import com.restaurant.model.Table;
+
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+
+public class JsonLoader {
+
+    public static List<RestaurantSetting> loadRestaurantSettings(String filePath) throws IOException {
+        String raw = readFile(filePath);
+        List<RestaurantSetting> settings = new ArrayList<>();
+        List<String> objects = splitTopLevelObjects(raw);
+        for (String obj : objects) {
+            String id = extractString(obj, "id");
+            String name = extractString(obj, "name");
+            List<Table> tables = parseTables(obj);
+            if (id != null && name != null && !tables.isEmpty()) {
+                settings.add(new RestaurantSetting(id, name, tables));
+            }
+        }
+        if (settings.isEmpty()) throw new IllegalArgumentException("No valid restaurant settings found in: " + filePath);
+        return settings;
+    }
+
+    public static List<CustomerScenario> loadCustomerScenarios(String filePath) throws IOException {
+        String raw = readFile(filePath);
+        List<CustomerScenario> scenarios = new ArrayList<>();
+        List<String> objects = splitTopLevelObjects(raw);
+        for (String obj : objects) {
+            String id = extractString(obj, "id");
+            String name = extractString(obj, "name");
+            List<CustomerGroup> arrivals = parseArrivals(obj);
+            if (id != null && name != null && !arrivals.isEmpty()) {
+                scenarios.add(new CustomerScenario(id, name, arrivals));
+            }
+        }
+        if (scenarios.isEmpty()) throw new IllegalArgumentException("No valid customer scenarios found in: " + filePath);
+        return scenarios;
+    }
+
+    private static String readFile(String path) throws IOException {
+        StringBuilder sb = new StringBuilder();
+        try (BufferedReader br = new BufferedReader(new FileReader(path))) {
+            String line;
+            while ((line = br.readLine()) != null) sb.append(line).append("\n");
+        }
+        return sb.toString().trim();
+    }
+
+    private static List<String> splitTopLevelObjects(String json) {
+        List<String> parts = new ArrayList<>();
+        int depth = 0;
+        int start = -1;
+        for (int i = 0; i < json.length(); i++) {
+            char c = json.charAt(i);
+            if (c == '{') {
+                if (depth == 0) start = i;
+                depth++;
+            } else if (c == '}') {
+                depth--;
+                if (depth == 0 && start != -1) {
+                    parts.add(json.substring(start, i + 1));
+                    start = -1;
+                }
+            }
+        }
+        return parts;
+    }
+
+    private static String extractString(String json, String key) {
+        String pattern = "\"" + key + "\"";
+        int idx = json.indexOf(pattern);
+        if (idx < 0) return null;
+        int colon = json.indexOf(':', idx + pattern.length());
+        if (colon < 0) return null;
+        int q1 = json.indexOf('"', colon + 1);
+        if (q1 < 0) return null;
+        int q2 = json.indexOf('"', q1 + 1);
+        if (q2 < 0) return null;
+        return json.substring(q1 + 1, q2);
+    }
+
+    private static int extractInt(String json, String key) {
+        String pattern = "\"" + key + "\"";
+        int idx = json.indexOf(pattern);
+        if (idx < 0) return -1;
+        int colon = json.indexOf(':', idx + pattern.length());
+        if (colon < 0) return -1;
+        StringBuilder num = new StringBuilder();
+        for (int i = colon + 1; i < json.length(); i++) {
+            char c = json.charAt(i);
+            if (Character.isDigit(c)) num.append(c);
+            else if (num.length() > 0) break;
+        }
+        return num.length() > 0 ? Integer.parseInt(num.toString()) : -1;
+    }
+
+    private static boolean extractBoolean(String json, String key) {
+        String pattern = "\"" + key + "\"";
+        int idx = json.indexOf(pattern);
+        if (idx < 0) return false;
+        int colon = json.indexOf(':', idx + pattern.length());
+        if (colon < 0) return false;
+        String rest = json.substring(colon + 1).trim();
+        return rest.startsWith("true");
+    }
+
+    private static List<Table> parseTables(String json) {
+        List<Table> tables = new ArrayList<>();
+        int tablesStart = json.indexOf("\"tables\"");
+        if (tablesStart < 0) return tables;
+        int arrStart = json.indexOf('[', tablesStart);
+        if (arrStart < 0) return tables;
+        List<String> objs = extractArrayObjects(json, arrStart);
+        for (String obj : objs) {
+            String tableId = extractString(obj, "tableId");
+            int capacity = extractInt(obj, "capacity");
+            if (tableId != null && capacity > 0) {
+                tables.add(new Table(tableId, capacity));
+            }
+        }
+        return tables;
+    }
+
+    private static List<CustomerGroup> parseArrivals(String json) {
+        List<CustomerGroup> groups = new ArrayList<>();
+        int arrivalsStart = json.indexOf("\"arrivals\"");
+        if (arrivalsStart < 0) return groups;
+        int arrStart = json.indexOf('[', arrivalsStart);
+        if (arrStart < 0) return groups;
+        List<String> objs = extractArrayObjects(json, arrStart);
+        for (String obj : objs) {
+            String groupId = extractString(obj, "groupId");
+            int groupSize = extractInt(obj, "groupSize");
+            int preferred = extractInt(obj, "preferredTableSize");
+            boolean isVip = extractBoolean(obj, "isVip");
+            int arrival = extractInt(obj, "arrivalTime");
+            int duration = extractInt(obj, "diningDuration");
+            if (groupId != null && groupSize > 0 && preferred > 0 && arrival >= 0 && duration > 0) {
+                groups.add(new CustomerGroup(groupId, groupSize, preferred, isVip, arrival, duration));
+            }
+        }
+        return groups;
+    }
+
+    private static List<String> extractArrayObjects(String json, int arrStart) {
+        List<String> objs = new ArrayList<>();
+        int depth = 0;
+        int start = -1;
+        for (int i = arrStart; i < json.length(); i++) {
+            char c = json.charAt(i);
+            if (c == '{') {
+                if (depth == 0) start = i;
+                depth++;
+            } else if (c == '}') {
+                depth--;
+                if (depth == 0 && start != -1) {
+                    objs.add(json.substring(start, i + 1));
+                    start = -1;
+                }
+            } else if (c == ']' && depth == 0) {
+                break;
+            }
+        }
+        return objs;
+    }
+}

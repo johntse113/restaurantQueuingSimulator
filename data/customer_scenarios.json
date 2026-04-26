@@ -1,0 +1,50 @@
+[
+  {
+    "id": "light_traffic",
+    "name": "Light Traffic",
+    "arrivals": [
+      {"groupId":"G1","groupSize":2,"preferredTableSize":2,"isVip":false,"arrivalTime":0, "diningDuration":30},
+      {"groupId":"G2","groupSize":1,"preferredTableSize":2,"isVip":false,"arrivalTime":5, "diningDuration":20},
+      {"groupId":"G3","groupSize":4,"preferredTableSize":4,"isVip":true, "arrivalTime":10,"diningDuration":45},
+      {"groupId":"G4","groupSize":3,"preferredTableSize":4,"isVip":false,"arrivalTime":15,"diningDuration":35},
+      {"groupId":"G5","groupSize":2,"preferredTableSize":4,"isVip":false,"arrivalTime":20,"diningDuration":25},
+      {"groupId":"G6","groupSize":6,"preferredTableSize":6,"isVip":true, "arrivalTime":25,"diningDuration":60},
+      {"groupId":"G7","groupSize":2,"preferredTableSize":2,"isVip":false,"arrivalTime":40,"diningDuration":30},
+      {"groupId":"G8","groupSize":1,"preferredTableSize":2,"isVip":false,"arrivalTime":50,"diningDuration":20}
+    ]
+  },
+  {
+    "id": "peak_hours",
+    "name": "Peak Hours",
+    "arrivals": [
+      {"groupId":"G1", "groupSize":2,"preferredTableSize":2,"isVip":false,"arrivalTime":0, "diningDuration":40},
+      {"groupId":"G2", "groupSize":4,"preferredTableSize":4,"isVip":false,"arrivalTime":2, "diningDuration":50},
+      {"groupId":"G3", "groupSize":1,"preferredTableSize":2,"isVip":false,"arrivalTime":3, "diningDuration":25},
+      {"groupId":"G4", "groupSize":3,"preferredTableSize":4,"isVip":true, "arrivalTime":5, "diningDuration":45},
+      {"groupId":"G5", "groupSize":2,"preferredTableSize":2,"isVip":false,"arrivalTime":7, "diningDuration":35},
+      {"groupId":"G6", "groupSize":5,"preferredTableSize":6,"isVip":false,"arrivalTime":8, "diningDuration":55},
+      {"groupId":"G7", "groupSize":4,"preferredTableSize":4,"isVip":true, "arrivalTime":10,"diningDuration":60},
+      {"groupId":"G8", "groupSize":2,"preferredTableSize":4,"isVip":false,"arrivalTime":12,"diningDuration":30},
+      {"groupId":"G9", "groupSize":6,"preferredTableSize":6,"isVip":false,"arrivalTime":14,"diningDuration":70},
+      {"groupId":"G10","groupSize":3,"preferredTableSize":4,"isVip":false,"arrivalTime":15,"diningDuration":40},
+      {"groupId":"G11","groupSize":2,"preferredTableSize":2,"isVip":true, "arrivalTime":18,"diningDuration":35},
+      {"groupId":"G12","groupSize":1,"preferredTableSize":2,"isVip":false,"arrivalTime":20,"diningDuration":20}
+    ]
+  },
+  {
+    "id": "mixed_vip",
+    "name": "Mixed VIP Flow",
+    "arrivals": [
+      {"groupId":"G1", "groupSize":2,"preferredTableSize":2,"isVip":false,"arrivalTime":0, "diningDuration":30},
+      {"groupId":"G2", "groupSize":2,"preferredTableSize":2,"isVip":false,"arrivalTime":1, "diningDuration":30},
+      {"groupId":"G3", "groupSize":2,"preferredTableSize":2,"isVip":false,"arrivalTime":2, "diningDuration":30},
+      {"groupId":"G4", "groupSize":4,"preferredTableSize":4,"isVip":true, "arrivalTime":5, "diningDuration":45},
+      {"groupId":"G5", "groupSize":4,"preferredTableSize":4,"isVip":true, "arrivalTime":6, "diningDuration":45},
+      {"groupId":"G6", "groupSize":3,"preferredTableSize":4,"isVip":false,"arrivalTime":8, "diningDuration":40},
+      {"groupId":"G7", "groupSize":6,"preferredTableSize":6,"isVip":false,"arrivalTime":10,"diningDuration":60},
+      {"groupId":"G8", "groupSize":2,"preferredTableSize":2,"isVip":true, "arrivalTime":15,"diningDuration":35},
+      {"groupId":"G9", "groupSize":5,"preferredTableSize":6,"isVip":false,"arrivalTime":20,"diningDuration":50},
+      {"groupId":"G10","groupSize":1,"preferredTableSize":2,"isVip":false,"arrivalTime":25,"diningDuration":20}
+    ]
+  }
+]

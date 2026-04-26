@@ -1,0 +1,48 @@
+[
+  {
+    "id": "small_restaurant",
+    "name": "Small Bistro",
+    "tables": [
+      {"tableId": "T1", "capacity": 2},
+      {"tableId": "T2", "capacity": 2},
+      {"tableId": "T3", "capacity": 4},
+      {"tableId": "T4", "capacity": 4},
+      {"tableId": "T5", "capacity": 4},
+      {"tableId": "T6", "capacity": 6}
+    ]
+  },
+  {
+    "id": "medium_restaurant",
+    "name": "Medium Diner",
+    "tables": [
+      {"tableId": "T1", "capacity": 2},
+      {"tableId": "T2", "capacity": 2},
+      {"tableId": "T3", "capacity": 2},
+      {"tableId": "T4", "capacity": 4},
+      {"tableId": "T5", "capacity": 4},
+      {"tableId": "T6", "capacity": 4},
+      {"tableId": "T7", "capacity": 4},
+      {"tableId": "T8", "capacity": 4},
+      {"tableId": "T9", "capacity": 6},
+      {"tableId": "T10", "capacity": 6}
+    ]
+  },
+  {
+    "id": "large_restaurant",
+    "name": "Large Banquet Hall",
+    "tables": [
+      {"tableId": "T1",  "capacity": 2},
+      {"tableId": "T2",  "capacity": 2},
+      {"tableId": "T3",  "capacity": 4},
+      {"tableId": "T4",  "capacity": 4},
+      {"tableId": "T5",  "capacity": 4},
+      {"tableId": "T6",  "capacity": 4},
+      {"tableId": "T7",  "capacity": 6},
+      {"tableId": "T8",  "capacity": 6},
+      {"tableId": "T9",  "capacity": 8},
+      {"tableId": "T10", "capacity": 8},
+      {"tableId": "T11", "capacity": 2},
+      {"tableId": "T12", "capacity": 4}
+    ]
+  }
+]
