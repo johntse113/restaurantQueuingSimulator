@@ -26,15 +26,15 @@ public class PoissonGenerator {
                 System.out.println("  " + (i + 1) + ". " + scenarios.get(i).get("name"));
             }
             System.out.println("\nOptions:");
-            System.out.println("  [a] Add new scenarios");
-            System.out.println("  [d] Delete a scenario");
-            System.out.println("  [q] Save and quit");
+            System.out.println("  [1] Add new scenarios");
+            System.out.println("  [2] Delete a scenario");
+            System.out.println("  [3] Save and quit");
             System.out.print("Choice: ");
             String choice = sc.nextLine().trim().toLowerCase();
 
-            if (choice.equals("q")) break;
+            if (choice.equals("3")) break;
 
-            if (choice.equals("d")) {
+            if (choice.equals("2")) {
                 if (scenarios.isEmpty()) { System.out.println("No scenarios to delete."); continue; }
                 System.out.print("Enter scenario number to delete: ");
                 try {
@@ -44,7 +44,7 @@ public class PoissonGenerator {
                     System.out.println("Deleted: " + name);
                 } catch (NumberFormatException e) { System.out.println("Invalid input."); }
 
-            } else if (choice.equals("a")) {
+            } else if (choice.equals("1")) {
                 System.out.print("Enter mean arrivals/hour sample values separated by commas (e.g. 30,50,40): ");
                 String line = sc.nextLine().trim();
                 String[] parts = line.split(",");

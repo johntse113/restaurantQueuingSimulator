@@ -9,7 +9,7 @@ find src -name "*.java" -print | xargs javac -d out/
 ```
 
 ## Run simulation:
-Text-based. Runs every combination of algorithm, restaurant setting, and customer scenario and prints statistics.
+Text-based. Runs one specific or every combination of algorithm, restaurant setting, and customer scenario, and prints or exports statistics.
 ```
 java -cp out com.restaurant.Main data/restaurant_settings.json data/customer_scenarios.json
 ```
