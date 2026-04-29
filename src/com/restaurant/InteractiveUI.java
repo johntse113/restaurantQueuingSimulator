@@ -17,6 +17,7 @@ public class InteractiveUI extends JFrame {
     private List<RestaurantSetting> restaurants;
     private List<CustomerScenario> scenarios;
     private List<QueueAlgorithm> algorithms;
+    
 
     private JComboBox<String> restaurantBox, scenarioBox, algorithmBox;
     private JButton loadBtn, nextBtn, prevBtn, resetBtn;
@@ -42,6 +43,8 @@ public class InteractiveUI extends JFrame {
         try {
             restaurants = JsonLoader.loadRestaurantSettings(restaurantFile);
             scenarios = JsonLoader.loadCustomerScenarios(scenarioFile);
+            List<CustomerScenario> custom = JsonLoader.tryLoadCustomerScenarios("data/custom_scenarios.json");
+            if (!custom.isEmpty()) scenarios.addAll(custom);
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, "Failed to load JSON: " + e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
             System.exit(1);

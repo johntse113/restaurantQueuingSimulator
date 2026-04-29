@@ -7,5 +7,5 @@ import java.util.List;
 
 public interface QueueAlgorithm {
     String getName();
-    List<SimulationStep> simulate(List<Table> tables, List<CustomerGroup> groups);
+    List<SimulationStep> simulate(List<Table> tables, List<CustomerGroup> groups, int timeLimit);
 }

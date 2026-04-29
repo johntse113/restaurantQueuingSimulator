@@ -1,7 +1,25 @@
 [
   {
-    "id": "small_restaurant",
-    "name": "Small Bistro",
+    "id": "compact_cafe",
+    "name": "Compact Cafe",
+    "type": "small_fast_casual",
+    "description": "A small cafe with many 2-seat tables, suitable for individual diners and pairs during quick meals.",
+    "time_limit": 45,
+    "tables": [
+      {"tableId": "T1", "capacity": 2},
+      {"tableId": "T2", "capacity": 2},
+      {"tableId": "T3", "capacity": 2},
+      {"tableId": "T4", "capacity": 2},
+      {"tableId": "T5", "capacity": 4},
+      {"tableId": "T6", "capacity": 4}
+    ]
+  },
+  {
+    "id": "small_bistro_balanced",
+    "name": "Small Bistro - Balanced Layout",
+    "type": "small_bistro",
+    "description": "A small restaurant with a balanced mix of 2-seat, 4-seat, and 6-seat tables.",
+    "time_limit": 60,
     "tables": [
       {"tableId": "T1", "capacity": 2},
       {"tableId": "T2", "capacity": 2},
@@ -12,8 +30,25 @@
     ]
   },
   {
-    "id": "medium_restaurant",
-    "name": "Medium Diner",
+    "id": "small_bistro_large_table_heavy",
+    "name": "Small Bistro - Large Table Heavy Layout",
+    "type": "small_bistro",
+    "description": "A variation of the small bistro with fewer but larger tables, used to test the trade-off between group accommodation and seat wastage.",
+    "time_limit": 60,
+    "tables": [
+      {"tableId": "T1", "capacity": 4},
+      {"tableId": "T2", "capacity": 4},
+      {"tableId": "T3", "capacity": 4},
+      {"tableId": "T4", "capacity": 6},
+      {"tableId": "T5", "capacity": 6}
+    ]
+  },
+  {
+    "id": "medium_diner_standard",
+    "name": "Medium Diner - Standard Layout",
+    "type": "medium_casual_dining",
+    "description": "A medium-sized diner with many 4-seat tables, suitable for mixed group sizes during lunch and dinner periods.",
+    "time_limit": 75,
     "tables": [
       {"tableId": "T1", "capacity": 2},
       {"tableId": "T2", "capacity": 2},
@@ -28,21 +63,81 @@
     ]
   },
   {
-    "id": "large_restaurant",
-    "name": "Large Banquet Hall",
+    "id": "family_restaurant",
+    "name": "Family Restaurant",
+    "type": "family_dining",
+    "description": "A restaurant designed for families and medium-sized groups, with more 4-seat and 6-seat tables.",
+    "time_limit": 90,
     "tables": [
-      {"tableId": "T1",  "capacity": 2},
-      {"tableId": "T2",  "capacity": 2},
-      {"tableId": "T3",  "capacity": 4},
-      {"tableId": "T4",  "capacity": 4},
-      {"tableId": "T5",  "capacity": 4},
-      {"tableId": "T6",  "capacity": 4},
-      {"tableId": "T7",  "capacity": 6},
-      {"tableId": "T8",  "capacity": 6},
-      {"tableId": "T9",  "capacity": 8},
+      {"tableId": "T1", "capacity": 2},
+      {"tableId": "T2", "capacity": 4},
+      {"tableId": "T3", "capacity": 4},
+      {"tableId": "T4", "capacity": 4},
+      {"tableId": "T5", "capacity": 4},
+      {"tableId": "T6", "capacity": 6},
+      {"tableId": "T7", "capacity": 6},
+      {"tableId": "T8", "capacity": 6},
+      {"tableId": "T9", "capacity": 8}
+    ]
+  },
+  {
+    "id": "dim_sum_hall",
+    "name": "Dim Sum Hall",
+    "type": "large_chinese_restaurant",
+    "description": "A large Chinese-style restaurant with more large tables, suitable for family gatherings and group dining.",
+    "time_limit": 120,
+    "tables": [
+      {"tableId": "T1", "capacity": 2},
+      {"tableId": "T2", "capacity": 2},
+      {"tableId": "T3", "capacity": 4},
+      {"tableId": "T4", "capacity": 4},
+      {"tableId": "T5", "capacity": 4},
+      {"tableId": "T6", "capacity": 6},
+      {"tableId": "T7", "capacity": 6},
+      {"tableId": "T8", "capacity": 6},
+      {"tableId": "T9", "capacity": 8},
       {"tableId": "T10", "capacity": 8},
-      {"tableId": "T11", "capacity": 2},
-      {"tableId": "T12", "capacity": 4}
+      {"tableId": "T11", "capacity": 10},
+      {"tableId": "T12", "capacity": 10}
+    ]
+  },
+  {
+    "id": "banquet_hall",
+    "name": "Large Banquet Hall",
+    "type": "large_banquet",
+    "description": "A large restaurant setting with high seating capacity and many large tables, useful for testing large-group traffic.",
+    "time_limit": 150,
+    "tables": [
+      {"tableId": "T1", "capacity": 4},
+      {"tableId": "T2", "capacity": 4},
+      {"tableId": "T3", "capacity": 4},
+      {"tableId": "T4", "capacity": 6},
+      {"tableId": "T5", "capacity": 6},
+      {"tableId": "T6", "capacity": 6},
+      {"tableId": "T7", "capacity": 8},
+      {"tableId": "T8", "capacity": 8},
+      {"tableId": "T9", "capacity": 8},
+      {"tableId": "T10", "capacity": 10},
+      {"tableId": "T11", "capacity": 10},
+      {"tableId": "T12", "capacity": 12},
+      {"tableId": "T13", "capacity": 12}
+    ]
+  },
+  {
+    "id": "small_table_heavy_layout",
+    "name": "Small-Table Heavy Layout",
+    "type": "experimental_layout",
+    "description": "An experimental layout with many small tables, used to compare against large-table-heavy layouts under the same arrival pattern.",
+    "time_limit": 60,
+    "tables": [
+      {"tableId": "T1", "capacity": 2},
+      {"tableId": "T2", "capacity": 2},
+      {"tableId": "T3", "capacity": 2},
+      {"tableId": "T4", "capacity": 2},
+      {"tableId": "T5", "capacity": 2},
+      {"tableId": "T6", "capacity": 2},
+      {"tableId": "T7", "capacity": 4},
+      {"tableId": "T8", "capacity": 4}
     ]
   }
 ]

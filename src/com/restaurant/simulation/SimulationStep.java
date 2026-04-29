@@ -13,10 +13,8 @@ public class SimulationStep {
     public CustomerGroup justArrived;
     public Table tableUsed;
 
-    public SimulationStep(int time, String event, List<Table> tableSnapshot,
-                          List<CustomerGroup> queueSnapshot,
-                          CustomerGroup justSeated, CustomerGroup justArrived,
-                          Table tableUsed) {
+    public SimulationStep(int time, String event, List<Table> tableSnapshot, List<CustomerGroup> queueSnapshot, 
+                            CustomerGroup justSeated, CustomerGroup justArrived, Table tableUsed) {
         this.time = time;
         this.event = event;
         this.tableSnapshot = tableSnapshot;

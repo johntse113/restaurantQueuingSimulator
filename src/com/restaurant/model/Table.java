@@ -21,10 +21,15 @@ public class Table {
     public int getFreeAtTime() { return freeAtTime; }
     public CustomerGroup getCurrentGroup() { return currentGroup; }
 
-    public void seat(CustomerGroup group, int currentTime) {
+    public void seat(CustomerGroup group, int currentTime, int timeLimit) {
         this.occupied = true;
         this.currentGroup = group;
-        this.freeAtTime = currentTime + group.getDiningDuration();
+        int rawEnd = currentTime + group.getDiningDuration();
+        if (timeLimit > 0) {
+            this.freeAtTime = Math.min(rawEnd, currentTime + timeLimit);
+        } else {
+            this.freeAtTime = rawEnd;
+        }
     }
 
     public void free() {
