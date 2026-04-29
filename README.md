@@ -28,6 +28,7 @@ java -cp out com.restaurant.PoissonGenerator
 
 
 ## Project Structure
+<pre>
 restaurant-sim/
 ├── data/
 │ ├── restaurant_settings.json
@@ -55,7 +56,7 @@ restaurant-sim/
 ├── Main.java
 ├── InteractiveUI.java
 └── PoissonGenerator.java
-
+</pre>
 
 ## Data Files
 
