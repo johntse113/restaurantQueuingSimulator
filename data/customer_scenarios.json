@@ -10,7 +10,15 @@
       {"groupId":"G5","groupSize":2,"preferredTableSize":4,"isVip":false,"arrivalTime":20,"diningDuration":25},
       {"groupId":"G6","groupSize":6,"preferredTableSize":6,"isVip":true, "arrivalTime":25,"diningDuration":60},
       {"groupId":"G7","groupSize":2,"preferredTableSize":2,"isVip":false,"arrivalTime":40,"diningDuration":30},
-      {"groupId":"G8","groupSize":1,"preferredTableSize":2,"isVip":false,"arrivalTime":50,"diningDuration":20}
+      {"groupId":"G8","groupSize":1,"preferredTableSize":2,"isVip":false,"arrivalTime":50,"diningDuration":20},
+      {"groupId":"G9","groupSize":3,"preferredTableSize":4,"isVip":false,"arrivalTime":55,"diningDuration":35},
+      {"groupId":"G10","groupSize":2,"preferredTableSize":2,"isVip":true,"arrivalTime":60,"diningDuration":40},
+      {"groupId":"G11","groupSize":4,"preferredTableSize":4,"isVip":false,"arrivalTime":65,"diningDuration":45},
+      {"groupId":"G12","groupSize":1,"preferredTableSize":2,"isVip":false,"arrivalTime":70,"diningDuration":20},
+      {"groupId":"G13","groupSize":5,"preferredTableSize":6,"isVip":false,"arrivalTime":75,"diningDuration":50},
+      {"groupId":"G14","groupSize":2,"preferredTableSize":2,"isVip":false,"arrivalTime":80,"diningDuration":30},
+      {"groupId":"G15","groupSize":3,"preferredTableSize":4,"isVip":true,"arrivalTime":85,"diningDuration":40},
+      {"groupId":"G16","groupSize":4,"preferredTableSize":4,"isVip":false,"arrivalTime":90,"diningDuration":35}
     ]
   },
   {
@@ -28,7 +36,19 @@
       {"groupId":"G9", "groupSize":6,"preferredTableSize":6,"isVip":false,"arrivalTime":14,"diningDuration":70},
       {"groupId":"G10","groupSize":3,"preferredTableSize":4,"isVip":false,"arrivalTime":15,"diningDuration":40},
       {"groupId":"G11","groupSize":2,"preferredTableSize":2,"isVip":true, "arrivalTime":18,"diningDuration":35},
-      {"groupId":"G12","groupSize":1,"preferredTableSize":2,"isVip":false,"arrivalTime":20,"diningDuration":20}
+      {"groupId":"G12","groupSize":1,"preferredTableSize":2,"isVip":false,"arrivalTime":20,"diningDuration":20},
+      {"groupId":"G13","groupSize":4,"preferredTableSize":4,"isVip":false,"arrivalTime":22,"diningDuration":45},
+      {"groupId":"G14","groupSize":2,"preferredTableSize":2,"isVip":false,"arrivalTime":24,"diningDuration":30},
+      {"groupId":"G15","groupSize":3,"preferredTableSize":4,"isVip":true,"arrivalTime":26,"diningDuration":50},
+      {"groupId":"G16","groupSize":5,"preferredTableSize":6,"isVip":false,"arrivalTime":28,"diningDuration":60},
+      {"groupId":"G17","groupSize":1,"preferredTableSize":2,"isVip":false,"arrivalTime":30,"diningDuration":25},
+      {"groupId":"G18","groupSize":4,"preferredTableSize":4,"isVip":false,"arrivalTime":32,"diningDuration":40},
+      {"groupId":"G19","groupSize":6,"preferredTableSize":6,"isVip":true,"arrivalTime":34,"diningDuration":65},
+      {"groupId":"G20","groupSize":2,"preferredTableSize":4,"isVip":false,"arrivalTime":36,"diningDuration":30},
+      {"groupId":"G21","groupSize":3,"preferredTableSize":4,"isVip":false,"arrivalTime":38,"diningDuration":45},
+      {"groupId":"G22","groupSize":2,"preferredTableSize":2,"isVip":true,"arrivalTime":40,"diningDuration":35},
+      {"groupId":"G23","groupSize":4,"preferredTableSize":4,"isVip":false,"arrivalTime":42,"diningDuration":50},
+      {"groupId":"G24","groupSize":1,"preferredTableSize":2,"isVip":false,"arrivalTime":45,"diningDuration":20}
     ]
   },
   {
@@ -44,7 +64,77 @@
       {"groupId":"G7", "groupSize":6,"preferredTableSize":6,"isVip":false,"arrivalTime":10,"diningDuration":60},
       {"groupId":"G8", "groupSize":2,"preferredTableSize":2,"isVip":true, "arrivalTime":15,"diningDuration":35},
       {"groupId":"G9", "groupSize":5,"preferredTableSize":6,"isVip":false,"arrivalTime":20,"diningDuration":50},
-      {"groupId":"G10","groupSize":1,"preferredTableSize":2,"isVip":false,"arrivalTime":25,"diningDuration":20}
+      {"groupId":"G10","groupSize":1,"preferredTableSize":2,"isVip":false,"arrivalTime":25,"diningDuration":20},
+      {"groupId":"G11","groupSize":3,"preferredTableSize":4,"isVip":false,"arrivalTime":28,"diningDuration":35},
+      {"groupId":"G12","groupSize":2,"preferredTableSize":2,"isVip":true,"arrivalTime":30,"diningDuration":40},
+      {"groupId":"G13","groupSize":4,"preferredTableSize":4,"isVip":false,"arrivalTime":32,"diningDuration":45},
+      {"groupId":"G14","groupSize":2,"preferredTableSize":2,"isVip":false,"arrivalTime":35,"diningDuration":30},
+      {"groupId":"G15","groupSize":6,"preferredTableSize":6,"isVip":true,"arrivalTime":38,"diningDuration":55},
+      {"groupId":"G16","groupSize":3,"preferredTableSize":4,"isVip":false,"arrivalTime":40,"diningDuration":40},
+      {"groupId":"G17","groupSize":1,"preferredTableSize":2,"isVip":false,"arrivalTime":42,"diningDuration":25},
+      {"groupId":"G18","groupSize":4,"preferredTableSize":4,"isVip":false,"arrivalTime":45,"diningDuration":50},
+      {"groupId":"G19","groupSize":2,"preferredTableSize":2,"isVip":true,"arrivalTime":48,"diningDuration":35},
+      {"groupId":"G20","groupSize":5,"preferredTableSize":6,"isVip":false,"arrivalTime":50,"diningDuration":45}
+    ]
+  },
+  {
+    "id": "mixed_flows",
+    "name": "Distributed Arrivals with Mixed Sizes and VIPs",
+    "arrivals": [
+      {"groupId":"G1", "groupSize":1,"preferredTableSize":4,"isVip":false,"arrivalTime":0, "diningDuration":40},
+      {"groupId":"G2", "groupSize":4,"preferredTableSize":4,"isVip":false,"arrivalTime":2, "diningDuration":50},
+      {"groupId":"G3", "groupSize":1,"preferredTableSize":2,"isVip":false,"arrivalTime":2, "diningDuration":25},
+      {"groupId":"G4", "groupSize":1,"preferredTableSize":4,"isVip":true, "arrivalTime":5, "diningDuration":45},
+      {"groupId":"G5", "groupSize":2,"preferredTableSize":2,"isVip":false,"arrivalTime":7, "diningDuration":35},
+      {"groupId":"G6", "groupSize":3,"preferredTableSize":4,"isVip":false,"arrivalTime":8, "diningDuration":55},
+      {"groupId":"G7", "groupSize":1,"preferredTableSize":4,"isVip":true, "arrivalTime":8,"diningDuration":60},
+      {"groupId":"G8", "groupSize":4,"preferredTableSize":4,"isVip":false,"arrivalTime":8,"diningDuration":30},
+      {"groupId":"G9", "groupSize":4,"preferredTableSize":4,"isVip":false,"arrivalTime":14,"diningDuration":70},
+      {"groupId":"G10","groupSize":1,"preferredTableSize":4,"isVip":false,"arrivalTime":15,"diningDuration":40},
+      {"groupId":"G11","groupSize":2,"preferredTableSize":2,"isVip":true, "arrivalTime":18,"diningDuration":35},
+      {"groupId":"G12","groupSize":1,"preferredTableSize":2,"isVip":false,"arrivalTime":20,"diningDuration":20},
+      {"groupId":"G13","groupSize":4,"preferredTableSize":4,"isVip":false,"arrivalTime":22,"diningDuration":45},
+      {"groupId":"G14","groupSize":2,"preferredTableSize":2,"isVip":false,"arrivalTime":24,"diningDuration":30},
+      {"groupId":"G15","groupSize":3,"preferredTableSize":4,"isVip":true,"arrivalTime":26,"diningDuration":50},
+      {"groupId":"G16","groupSize":1,"preferredTableSize":4,"isVip":false,"arrivalTime":28,"diningDuration":60},
+      {"groupId":"G17","groupSize":1,"preferredTableSize":2,"isVip":false,"arrivalTime":30,"diningDuration":25},
+      {"groupId":"G18","groupSize":4,"preferredTableSize":4,"isVip":false,"arrivalTime":32,"diningDuration":40},
+      {"groupId":"G19","groupSize":6,"preferredTableSize":6,"isVip":true,"arrivalTime":34,"diningDuration":65},
+      {"groupId":"G20","groupSize":2,"preferredTableSize":4,"isVip":false,"arrivalTime":36,"diningDuration":30},
+      {"groupId":"G21","groupSize":3,"preferredTableSize":4,"isVip":false,"arrivalTime":38,"diningDuration":45},
+      {"groupId":"G22","groupSize":2,"preferredTableSize":2,"isVip":true,"arrivalTime":40,"diningDuration":35},
+      {"groupId":"G23","groupSize":4,"preferredTableSize":4,"isVip":false,"arrivalTime":42,"diningDuration":50},
+      {"groupId":"G24","groupSize":1,"preferredTableSize":2,"isVip":false,"arrivalTime":45,"diningDuration":20}
+    ]
+  },
+  {
+    "id": "many_1s",
+    "name": "Many 1 Person Groups Preferring 4-Person Tables",
+    "arrivals": [
+      {"groupId":"G1", "groupSize":1,"preferredTableSize":4,"isVip":false,"arrivalTime":0, "diningDuration":40},
+      {"groupId":"G2", "groupSize":1,"preferredTableSize":4,"isVip":false,"arrivalTime":2, "diningDuration":50},
+      {"groupId":"G3", "groupSize":4,"preferredTableSize":2,"isVip":false,"arrivalTime":2, "diningDuration":25},
+      {"groupId":"G4", "groupSize":1,"preferredTableSize":4,"isVip":true, "arrivalTime":5, "diningDuration":45},
+      {"groupId":"G5", "groupSize":1,"preferredTableSize":2,"isVip":false,"arrivalTime":7, "diningDuration":35},
+      {"groupId":"G6", "groupSize":1,"preferredTableSize":4,"isVip":false,"arrivalTime":8, "diningDuration":55},
+      {"groupId":"G7", "groupSize":1,"preferredTableSize":4,"isVip":true, "arrivalTime":8,"diningDuration":60},
+      {"groupId":"G8", "groupSize":4,"preferredTableSize":4,"isVip":false,"arrivalTime":8,"diningDuration":30},
+      {"groupId":"G9", "groupSize":1,"preferredTableSize":4,"isVip":false,"arrivalTime":14,"diningDuration":70},
+      {"groupId":"G10","groupSize":1,"preferredTableSize":4,"isVip":false,"arrivalTime":15,"diningDuration":40},
+      {"groupId":"G11","groupSize":2,"preferredTableSize":2,"isVip":true, "arrivalTime":18,"diningDuration":35},
+      {"groupId":"G12","groupSize":1,"preferredTableSize":2,"isVip":false,"arrivalTime":20,"diningDuration":20},
+      {"groupId":"G13","groupSize":4,"preferredTableSize":4,"isVip":false,"arrivalTime":22,"diningDuration":45},
+      {"groupId":"G14","groupSize":2,"preferredTableSize":2,"isVip":false,"arrivalTime":24,"diningDuration":30},
+      {"groupId":"G15","groupSize":3,"preferredTableSize":4,"isVip":true,"arrivalTime":26,"diningDuration":50},
+      {"groupId":"G16","groupSize":4,"preferredTableSize":4,"isVip":false,"arrivalTime":28,"diningDuration":60},
+      {"groupId":"G17","groupSize":1,"preferredTableSize":2,"isVip":false,"arrivalTime":30,"diningDuration":25},
+      {"groupId":"G18","groupSize":4,"preferredTableSize":4,"isVip":false,"arrivalTime":32,"diningDuration":40},
+      {"groupId":"G19","groupSize":6,"preferredTableSize":6,"isVip":true,"arrivalTime":34,"diningDuration":65},
+      {"groupId":"G20","groupSize":2,"preferredTableSize":4,"isVip":false,"arrivalTime":36,"diningDuration":30},
+      {"groupId":"G21","groupSize":3,"preferredTableSize":4,"isVip":false,"arrivalTime":38,"diningDuration":45},
+      {"groupId":"G22","groupSize":2,"preferredTableSize":2,"isVip":true,"arrivalTime":40,"diningDuration":35},
+      {"groupId":"G23","groupSize":4,"preferredTableSize":4,"isVip":false,"arrivalTime":42,"diningDuration":50},
+      {"groupId":"G24","groupSize":1,"preferredTableSize":2,"isVip":false,"arrivalTime":45,"diningDuration":20}
     ]
   }
 ]
